@@ -2,6 +2,7 @@ package main;
 
 import main.personen.Person;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class History {
@@ -11,7 +12,7 @@ public class History {
 
 
     public void selfSet(String changed) {
-        historySides.add(changed);
+        historySides.add(LocalDate.now() + " " + changed);
     }
 
 

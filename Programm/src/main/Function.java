@@ -3,7 +3,6 @@ package main;
 import main.personen.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Locale;
 
 public class Function {
@@ -88,11 +87,33 @@ public class Function {
         return r;
     }
 
+    public boolean removeManager(String id) {
+        boolean r = false;
+        for (int i = 0; i < managerListe.length; i++) {
+            if (managerListe[i].getId().equals(id)) {
+                managerListe[i] = null;
+                r = true;
+            }
+        }
+        return r;
+    }
+
     public boolean addGeschaeftsfuehrer(Geschaeftsfuehrer geschaeftsfuehrer) {
         boolean r = false;
         for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
             if (geschaeftsfuehrerListe[i] == null) {
                 geschaeftsfuehrerListe[i] = geschaeftsfuehrer;
+                r = true;
+            }
+        }
+        return r;
+    }
+
+    public boolean removeGeschaeftsfuehrer(String id) {
+        boolean r = false;
+        for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
+            if (geschaeftsfuehrerListe[i].getId().equals(id)) {
+                geschaeftsfuehrerListe[i] = null;
                 r = true;
             }
         }
@@ -110,6 +131,17 @@ public class Function {
         return r;
     }
 
+    public boolean removeZeitArbeiter(String id) {
+        boolean r = false;
+        for (int i = 0; i < zeitArbeiterListe.length; i++) {
+            if (zeitArbeiterListe[i].getId().equals(id)) {
+                zeitArbeiterListe[i] = null;
+                r = true;
+            }
+        }
+        return r;
+    }
+
 
     public String getFirmanName() {
         return firmanName;
@@ -117,5 +149,13 @@ public class Function {
 
     public void setFirmanName(String firmanName) {
         this.firmanName = firmanName;
+    }
+
+    public ArrayList<Person[]> getPersonArrayList() {
+        return personArrayList;
+    }
+
+    public void setPersonArrayList(ArrayList<Person[]> personArrayList) {
+        this.personArrayList = personArrayList;
     }
 }
