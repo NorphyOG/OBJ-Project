@@ -379,11 +379,11 @@ public class Menu {
             switch (input) {
                 case 1:
 
-                    function.addZeitArbeiter();
+                    //function.addZeitArbeiter();
                     break;
                 case 2:
 
-                    function.removeZeitArbeiter();
+                    //function.removeZeitArbeiter();
                     break;
                 case 3:
                     run = false;
