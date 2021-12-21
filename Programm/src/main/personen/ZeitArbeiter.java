@@ -26,7 +26,7 @@ public class ZeitArbeiter extends Person{
 
     @Override
     public String toString() {
-        return "ZeitArbeiter{" +
+        return super.toString() + "ZeitArbeiter{" +
                 "arbeitsZeitM=" + arbeitsZeitM +
                 '}';
     }

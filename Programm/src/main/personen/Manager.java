@@ -37,7 +37,7 @@ public class Manager extends Arbeiter {
 
     @Override
     public String toString() {
-        return "Manager{" +
+        return super.toString() +  "Manager{" +
                 "gewPersonenListe=" + Arrays.toString(gewPersonenListe) +
                 ", provision=" + provision +
                 '}';

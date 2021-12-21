@@ -2,8 +2,11 @@ package main.konsole;
 
 import main.Function;
 import main.History;
+import main.personen.Geschaeftsfuehrer;
 import main.personen.PersonData;
 
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -85,6 +88,7 @@ public class Menu {
 
         if (!personData.dataPresent()) {
             overlay.setPanelName1(" OBJ Project - Main Menu with Data");
+            personData.dataPresent();
         } else {
             overlay.setPanelName1(" OBJ Project - Main Menu");
         }
@@ -132,6 +136,18 @@ public class Menu {
         Overlay overlay = new Overlay();
         int input = 0;
         boolean run = true;
+
+        Function function = new Function();
+        PersonData personData = new PersonData();
+        Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer("Günter","Gehindert", 'M', "Scheideweg 3", LocalDate.of(1988, 12,12), LocalDate.of(2010, 12, 22),8000,1.02,40);
+        personData.setup(null, null, null , geschaeftsfuehrer, 1);
+
+        System.out.println(function.getPersonArrayList());
+
+        System.out.println(Arrays.toString(function.getZeitArbeiterListe()));
+        System.out.println(Arrays.toString(function.getArbeiterListe()));
+        System.out.println(Arrays.toString(function.getManagerListe()));
+        System.out.println(Arrays.toString(function.getGeschaeftsfuehrerListe()));
 
         overlay.setPanelName1(" Show Menu");
         overlay.setOption1(" [3 = Exit Show Modus]");

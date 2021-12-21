@@ -17,25 +17,34 @@ public class PersonData {
         if (zeitArbeiter != null) {
             zeitArbeiter.setLohnZeitArbeiter(zeitArbeiter);
             function.setID(zeitArbeiter);
+            function.addZeitArbeiter(zeitArbeiter);
             history.personChanged(zeitArbeiter ,changedLevel);
+
         } else if (arbeiter != null) {
             arbeiter.setLohnArbeiter(arbeiter);
             function.setID(arbeiter);
+            function.addArbeiter(arbeiter);
             history.personChanged(arbeiter ,changedLevel);
+
         } else if (manager != null) {
             manager.setLohnManager(manager);
             function.setID(manager);
+            function.addManager(manager);
             history.personChanged(manager ,changedLevel);
+
         } else if (geschaeftsfuehrer != null) {
+            System.out.println("1 " + geschaeftsfuehrer);
             geschaeftsfuehrer.setLohnGeschäftsführer(geschaeftsfuehrer);
             function.setID(geschaeftsfuehrer);
+            function.addGeschaeftsfuehrer(geschaeftsfuehrer);
             history.personChanged(geschaeftsfuehrer ,changedLevel);
+
         }
 
     }
 
     public boolean dataPresent() {
-        if (useDataPresent) {
+        if (isUseDataPresent()) {
 
             System.out.println("dataPresent");
 
