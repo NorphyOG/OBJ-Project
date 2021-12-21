@@ -35,16 +35,17 @@ public class Creator {
         //GFührer
         double zuschlag = 0;
 
+        overlay.setPanelName1(" Person Creator");
 
-        overlay.setOption1("Vorname eigeben");
+        overlay.setOption1(" Vorname eigeben");
         overlay.o1ss(false);
         vorname = sc.next();
 
-        overlay.setOption1("Nachname eigeben");
+        overlay.setOption1(" Nachname eigeben");
         overlay.o1ss(false);
         nachname = sc.next();
 
-        overlay.setOption1("Geschlecht aussuchen | 1 = M | 2 = W | 3 = X |");
+        overlay.setOption1(" Geschlecht aussuchen | 1 = M | 2 = W | 3 = X |");
         overlay.o1ss(false);
         boolean run = true;
         while (run) {
@@ -76,15 +77,16 @@ public class Creator {
             }
         }
 
-        overlay.setOption1("Adresse eigeben");
-        overlay.o1ss(false);
+        overlay.setOption1(" Adresse eigeben");
+        overlay.setErr("Leertaste mit _ oder - ersetzen.");
+        overlay.o1ss(true);
         adresse = sc.next();
 
         boolean ff = false;
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Geburtstag Jahr eigeben");
+                overlay.setOption1(" Geburtstag Jahr eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -103,7 +105,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Geburtstag Monat eigeben");
+                overlay.setOption1(" Geburtstag Monat eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -122,7 +124,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Geburtstag Tag eigeben");
+                overlay.setOption1(" Geburtstag Tag eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -145,7 +147,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Monats Gehalt eigeben");
+                overlay.setOption1(" Monats Gehalt eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -164,7 +166,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Arbeitsstunden eigeben");
+                overlay.setOption1(" Arbeitsstunden eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -183,7 +185,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Eintritts Jahr eigeben");
+                overlay.setOption1(" Eintritts Jahr eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -202,7 +204,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Eintritts Monat eigeben");
+                overlay.setOption1(" Eintritts Monat eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -221,7 +223,7 @@ public class Creator {
         run = true;
         while (run) {
             if (!ff) {
-                overlay.setOption1("Eintritts Tag eigeben");
+                overlay.setOption1(" Eintritts Tag eigeben");
                 overlay.o1ss(false);
             }
             try {
@@ -248,7 +250,7 @@ public class Creator {
                 run = true;
                 while (run) {
                     if (!ff) {
-                        overlay.setOption1("Arbeits zeit in Monaten eigeben");
+                        overlay.setOption1(" Arbeits zeit in Monaten eigeben");
                         overlay.o1ss(false);
                     }
                     try {
@@ -276,7 +278,7 @@ public class Creator {
                 run = true;
                 while (run) {
                     if (!ff) {
-                        overlay.setOption1("Provision eingeben (Formart: (1.23) = 23%)");
+                        overlay.setOption1(" Provision eingeben (Formart: (1.23) = 23%)");
                         overlay.o1ss(false);
                     }
                     try {
@@ -296,7 +298,7 @@ public class Creator {
                 run = true;
                 while (run) {
                     if (!ff) {
-                        overlay.setOption1("Wie viel leute hat er angeworben? (ID muss vorhanden sein) - (MAX 99)");
+                        overlay.setOption1(" Wie viel leute hat er angeworben? (ID muss vorhanden sein) - (MAX 99)");
                         overlay.o1ss(false);
                     }
                     try {
@@ -313,7 +315,7 @@ public class Creator {
 
                 for (int i = 0; i < angeworben; i++) {
                     String scanner = null;
-                    overlay.setOption1("ID der Person eingeben");
+                    overlay.setOption1(" ID der Person eingeben");
                     overlay.o1ss(false);
                     scanner = sc.next();
 
@@ -336,7 +338,7 @@ public class Creator {
                 run = true;
                 while (run) {
                     if (!ff) {
-                        overlay.setOption1("Zuschlag eingeben");
+                        overlay.setOption1(" Zuschlag eingeben");
                         overlay.o1ss(false);
                     }
                     try {

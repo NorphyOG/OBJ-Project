@@ -386,8 +386,7 @@ public class Menu {
             History history = new History();
             switch (input) {
                 case 1:
-
-
+                    creator.createPerson(0);
                     break;
                 case 2:
 

@@ -13,10 +13,10 @@ public class PersonData {
     private History history = new History();
 
     public void setup(Person person, int personLevel, int changedLevel) {
-        ZeitArbeiter zeitArbeiterUntil = null;
-        Arbeiter arbeiterUntil = null;
-        Manager managerUntil = null;
-        Geschaeftsfuehrer geschaeftsfuehrerUntil = null;
+        ZeitArbeiter zeitArbeiterUntil = (ZeitArbeiter) person;
+        Arbeiter arbeiterUntil = (Arbeiter) person;
+        Manager managerUntil = (Manager) person;
+        Geschaeftsfuehrer geschaeftsfuehrerUntil = (Geschaeftsfuehrer) person;
 
         switch (personLevel) {
             case 0 -> {
