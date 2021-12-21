@@ -29,7 +29,7 @@ public class Geschaeftsfuehrer extends Person{
 
     @Override
     public String toString() {
-        return "Geschaeftsfuehrer{" +
+        return super.toString() + "Geschaeftsfuehrer{" +
                 "zuschlag=" + zuschlag +
                 '}';
     }

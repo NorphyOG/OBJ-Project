@@ -12,6 +12,7 @@ public class Function {
     private Manager[] managerListe = new Manager[2];
     private Geschaeftsfuehrer[] geschaeftsfuehrerListe = new Geschaeftsfuehrer[1];
     private ZeitArbeiter[] zeitArbeiterListe = new ZeitArbeiter[99];
+
     private ArrayList<Person[]> personArrayList = new ArrayList<>();
 
     private History history = new History();
@@ -63,7 +64,6 @@ public class Function {
         for (int i = 0; i < arbeiterListe.length; i++) {
             if (arbeiterListe[i] == null) {
                 arbeiterListe[i] = arbeiter;
-                System.out.println("addArbeiter - confirm");
                 r = true;
             }
         }
@@ -114,7 +114,11 @@ public class Function {
         for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
             if (geschaeftsfuehrerListe[i] == null) {
                 geschaeftsfuehrerListe[i] = geschaeftsfuehrer;
+                System.out.println("2 "+ geschaeftsfuehrer);
+                System.out.println( i + " addGeschaeftsfuehrer - confirm");
                 r = true;
+                break;
+
             }
         }
         return r;
@@ -174,5 +178,37 @@ public class Function {
 
     public void setPersonArrayList(ArrayList<Person[]> personArrayList) {
         this.personArrayList = personArrayList;
+    }
+
+    public Arbeiter[] getArbeiterListe() {
+        return arbeiterListe;
+    }
+
+    public void setArbeiterListe(Arbeiter[] arbeiterListe) {
+        this.arbeiterListe = arbeiterListe;
+    }
+
+    public Manager[] getManagerListe() {
+        return managerListe;
+    }
+
+    public void setManagerListe(Manager[] managerListe) {
+        this.managerListe = managerListe;
+    }
+
+    public Geschaeftsfuehrer[] getGeschaeftsfuehrerListe() {
+        return geschaeftsfuehrerListe;
+    }
+
+    public void setGeschaeftsfuehrerListe(Geschaeftsfuehrer[] geschaeftsfuehrerListe) {
+        this.geschaeftsfuehrerListe = geschaeftsfuehrerListe;
+    }
+
+    public ZeitArbeiter[] getZeitArbeiterListe() {
+        return zeitArbeiterListe;
+    }
+
+    public void setZeitArbeiterListe(ZeitArbeiter[] zeitArbeiterListe) {
+        this.zeitArbeiterListe = zeitArbeiterListe;
     }
 }
