@@ -12,13 +12,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public void leer() {
-        for (int i = 0; i < 15; i++) {
-            System.out.println();
-        }
-    }
-
-    public void setup() {
+    public void setup(Function function, PersonData personData) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -55,14 +49,12 @@ public class Menu {
                 case 1 -> {
                     overlay.setErr("Input Company Name");
                     overlay.o2(true);
-                    Function function = new Function();
                     String string = "Test Company";
                     string = sc.next();
                     function.setFirmenName(string);
                     overlay.setShow1(" " + string);
                 }
                 case 2 -> {
-                    PersonData personData = new PersonData();
                     switch1 = !switch1;
                     overlay.setShow2(" " + switch1);
                     personData.setUseDataPresent(switch1);
@@ -79,16 +71,15 @@ public class Menu {
 
     private boolean switchA = false;
 
-    public void m1() {
+    public void m1(Function function, History history, PersonData personData, Creator creator) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
         boolean run = true;
-        PersonData personData = new PersonData();
 
-        if (!personData.dataPresent()) {
+        if (personData.dataPresent(function, history)) {
             overlay.setPanelName1(" OBJ Project - Main Menu with Data");
-            personData.dataPresent();
+            personData.dataPresent(function, history);
         } else {
             overlay.setPanelName1(" OBJ Project - Main Menu");
         }
@@ -111,13 +102,13 @@ public class Menu {
             }
             switch (input) {
                 case 1:
-                    m2();
+                    m2(function, history, personData);
                     break;
                 case 2:
-                    m5();
+                    m5(function, history, personData, creator);
                     break;
                 case 3:
-                    m3();
+                    m3(history);
                     break;
                 case 4:
                     run = false;
@@ -131,40 +122,28 @@ public class Menu {
         }
 
     }
-    public void m2() {
+    public void m2(Function function,History history, PersonData personData) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
         boolean run = true;
 
-        Function function = new Function();
-        PersonData personData = new PersonData();
-        Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer("Günter","Gehindert", 'M', "Scheideweg 3", LocalDate.of(1988, 12,12), LocalDate.of(2010, 12, 22),8000,1.02,40);
-        personData.setup(null, null, null , geschaeftsfuehrer, 1);
-
-        System.out.println(function.getPersonArrayList());
-
-        System.out.println(Arrays.toString(function.getZeitArbeiterListe()));
-        System.out.println(Arrays.toString(function.getArbeiterListe()));
-        System.out.println(Arrays.toString(function.getManagerListe()));
-        System.out.println(Arrays.toString(function.getGeschaeftsfuehrerListe()));
-
         overlay.setPanelName1(" Show Menu");
         overlay.setOption1(" [3 = Exit Show Modus]");
-        overlay.o1d(false);
+        overlay.o1d(function, false);
         while (run) {
             try {
                 input = sc.nextInt();
             } catch (InputMismatchException e) {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1d(true);
+                overlay.o1d(function, true);
                 sc.next();
             }
             if (input == 3) {
                 run = false;
             } else {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1d(true);
+                overlay.o1d(function, true);
             }
 
         }
@@ -172,7 +151,7 @@ public class Menu {
     }
 
     private boolean switchB = false;
-    public void m3() {
+    public void m3(History history) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -197,10 +176,10 @@ public class Menu {
             }
             switch (input) {
                 case 1:
-                    m4();
+                    m4(history);
                     break;
                 case 2:
-                    m6();
+                    m6(history);
                     break;
                 case 3:
                     run = false;
@@ -215,7 +194,7 @@ public class Menu {
 
     }
 
-    public void m4() {
+    public void m4(History history) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -223,20 +202,20 @@ public class Menu {
 
         overlay.setPanelName1(" History List");
         overlay.setOption1(" [3 = Exit Show Modus]");
-        overlay.o1h(false);
+        overlay.o1h(history, false);
         while (run) {
             try {
                 input = sc.nextInt();
             } catch (InputMismatchException e) {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1h(true);
+                overlay.o1h(history, true);
                 sc.next();
             }
             if (input == 3) {
                 run = false;
             } else {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1h(true);
+                overlay.o1h(history, true);
             }
 
         }
@@ -244,7 +223,7 @@ public class Menu {
     }
 
     private boolean switchC = false;
-    public void m5() {
+    public void m5(Function function, History history, PersonData personData, Creator creator) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -252,7 +231,7 @@ public class Menu {
 
         overlay.setPanelName1(" Manage Menu");
         overlay.setOption1(" 1 = Add/Remove Person");
-        overlay.setOption2(" 2 = Gehalt Manage");
+        overlay.setOption2(" 2 = Gehalt Manage [WIP]");
         overlay.setOption3(" 3 = Back");
         overlay.o1(false);
         while (run) {
@@ -269,7 +248,7 @@ public class Menu {
             }
             switch (input) {
                 case 1:
-                    m7();
+                    m7(function, history, personData, creator);
                     break;
                 case 2:
 
@@ -287,7 +266,7 @@ public class Menu {
 
     }
 
-    public void m6() {
+    public void m6(History history) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -295,20 +274,20 @@ public class Menu {
 
         overlay.setPanelName1(" Last Removed Persons");
         overlay.setOption1(" [3 = Exit Show Modus]");
-        overlay.o1rp(false);
+        overlay.o1rp(history, false);
         while (run) {
             try {
                 input = sc.nextInt();
             } catch (InputMismatchException e) {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1rp(true);
+                overlay.o1rp(history, true);
                 sc.next();
             }
             if (input == 3) {
                 run = false;
             } else {
                 overlay.setErr("Error (Keine gültige Eingabe)");
-                overlay.o1rp(true);
+                overlay.o1rp(history, true);
             }
 
         }
@@ -316,7 +295,7 @@ public class Menu {
     }
 
     private boolean switchD = false;
-    public void m7() {
+    public void m7(Function function, History history, PersonData personData, Creator creator) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -324,9 +303,9 @@ public class Menu {
 
         overlay.setPanelName1(" Add/Remove Person");
         overlay.setOption1(" 1 = Add/Remove Zeit Arbeiter");
-        overlay.setOption2(" 2 = Add/Remove Arbeiter");
-        overlay.setOption3(" 3 = Add/Remove Manager");
-        overlay.setOption4(" 4 = Add/Remove Geschäftsführer");
+        overlay.setOption2(" 2 = Add/Remove Arbeiter [WIP]");
+        overlay.setOption3(" 3 = Add/Remove Manager [WIP]");
+        overlay.setOption4(" 4 = Add/Remove Geschäftsführer [WIP]");
         overlay.setOption5(" 5 = Back");
         overlay.o1big(false);
         while (run) {
@@ -343,7 +322,7 @@ public class Menu {
             }
             switch (input) {
                 case 1:
-                    m8();
+                    m8(function, history, personData, creator);
                     break;
                 case 2:
 
@@ -368,7 +347,7 @@ public class Menu {
     }
 
     private boolean switchE = false;
-    public void m8() {
+    public void m8(Function function, History history,PersonData personData, Creator creator) {
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
         int input = 0;
@@ -397,19 +376,17 @@ public class Menu {
                 overlay.o1(true);
                 sc.next();
             }
-            Function function = new Function();
-            Creator creator = new Creator();
-            History history = new History();
+
             switch (input) {
                 case 1:
-                    creator.createPerson(0);
+                    creator.createPerson(function, history, personData, 0);
                     break;
                 case 2:
 
                     overlay.setErr("ID eingeben um Person zu löschen");
                     overlay.o1(true);
                     String idString = sc.next();
-                    boolean a = function.removeZeitArbeiter(idString);
+                    boolean a = function.removeZeitArbeiter(history, idString);
                     if (a) {
                         overlay.setErr("Erfolgreich Removed");
                     } else {

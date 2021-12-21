@@ -11,7 +11,7 @@ public class History {
 
 
     public void selfSet(String changed) {
-        historySides.add(LocalDate.now() + " " + changed);
+        historySides.add(" " + LocalDate.now() + " " + changed);
     }
 
 
@@ -30,11 +30,11 @@ public class History {
     public void personChanged(Person person, int changedLevel) {
         String string;
         switch (changedLevel) {
-            case 0:
+            case 1:
                 string = "[+] Added " + person.getClass().getSimpleName() + " (ID: " + person.getId() + ") > { Name: " + person.getVorname() + " " + person.getNachname() + " }";
                 selfSet(string);
                 break;
-            case 1:
+            case 2:
                 string = "[-] Removed " + person.getClass().getSimpleName() + " (ID: " + person.getId() + ") > { Name: " + person.getVorname() + " " + person.getNachname() + " }";
                 personRemovedHistory.add(person);
                 selfSet(string);

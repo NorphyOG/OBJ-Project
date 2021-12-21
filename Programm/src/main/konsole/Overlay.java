@@ -71,7 +71,7 @@ public class Overlay {
 
     }
 
-    public void o1d(boolean error) {
+    public void o1d(Function function, boolean error) {
 
         String lineOben = "|%-353s|%n";
         String lineMain = "║%-353s║%n";
@@ -81,14 +81,11 @@ public class Overlay {
 
         System.out.format(                      "╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣%n");
 
-        Function function = new Function();
         for (Person[] p : function.getPersonArrayList()) {
             for (Person pv : p) {
                 if (pv != null) {
-                    System.out.println("o1d - Output");
                     option4 = pv.toString();
-                    System.out.format(lineMain, option4);
-                    System.out.println("║ " + pv);
+                    System.out.format(lineMain, " " + option4);
                 }
             }
         }
@@ -107,7 +104,7 @@ public class Overlay {
 
     }
 
-    public void o1h(boolean error) {
+    public void o1h(History history, boolean error) {
 
         String lineOben = "|%-353s|%n";
         String lineMain = "║%-353s║%n";
@@ -117,7 +114,6 @@ public class Overlay {
 
         System.out.format(                      "╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣%n");
 
-        History history = new History();
         for (String p : history.getHistorySides()) {
             option4 = p;
             System.out.format(lineMain, option4);
@@ -137,7 +133,7 @@ public class Overlay {
 
     }
 
-    public void o1rp(boolean error) {
+    public void o1rp(History history, boolean error) {
 
         String lineOben = "|%-353s|%n";
         String lineMain = "║%-353s║%n";
@@ -147,7 +143,6 @@ public class Overlay {
 
         System.out.format(                      "╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣%n");
 
-        History history = new History();
         for (Person p : history.getPersonRemovedHistory()) {
             option4 = String.valueOf(p);
             System.out.format(lineMain, option4);

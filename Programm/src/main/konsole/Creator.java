@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Creator {
 
-    public void createPerson(int switchLevel) {
+    public void createPerson(Function function, History history, PersonData personData, int switchLevel) {
         //0=ZeitArbeiter 1=Arbeiter 2=Manager 3=Geschaeftsfuehrer
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
@@ -240,10 +240,6 @@ public class Creator {
 
         eintritt = LocalDate.of(jahr, monat, tag);
 
-        History history = new History();
-        Function function = new Function();
-        PersonData personData = new PersonData();
-
         switch (switchLevel) {
             case 0:
                 ff = false;
@@ -266,11 +262,11 @@ public class Creator {
                 }
 
                 ZeitArbeiter zeitArbeiter = new ZeitArbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, arbeitsZeitM);
-                personData.setup(zeitArbeiter, null, null, null, 1);
+                personData.setup(function, history, zeitArbeiter, null, null, null, 1);
                 break;
             case 1:
                 Arbeiter arbeiter = new Arbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden);
-                personData.setup(null, arbeiter, null, null, 1);
+                personData.setup(function, history,null, arbeiter, null, null, 1);
                 break;
             case 2:
 
@@ -331,7 +327,7 @@ public class Creator {
                 }
 
                 Manager manager = new Manager(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, gewPersonenListe, provision);
-                personData.setup(null, null, manager, null, 1);
+                personData.setup(function, history, null, null, manager, null, 1);
                 break;
             case 3:
                 ff = false;
@@ -354,7 +350,7 @@ public class Creator {
                 }
 
                 Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, zuschlag, arbeitsStunden);
-                personData.setup(null, null, null, geschaeftsfuehrer, 1);
+                personData.setup(function, history, null, null, null, geschaeftsfuehrer, 1);
                 break;
         }
 

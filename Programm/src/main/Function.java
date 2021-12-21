@@ -15,10 +15,7 @@ public class Function {
 
     private ArrayList<Person[]> personArrayList = new ArrayList<>();
 
-    private History history = new History();
-
     public void setPersonArrayList() {
-        System.out.println("setPersonenArray");
         personArrayList.add(arbeiterListe);
         personArrayList.add(managerListe);
         personArrayList.add(geschaeftsfuehrerListe);
@@ -60,17 +57,17 @@ public class Function {
 
     public boolean addArbeiter(Arbeiter arbeiter) {
         boolean r = false;
-        System.out.println("addArbeiter - test");
         for (int i = 0; i < arbeiterListe.length; i++) {
             if (arbeiterListe[i] == null) {
                 arbeiterListe[i] = arbeiter;
                 r = true;
+                break;
             }
         }
         return r;
     }
 
-    public boolean removeArbeiter(String id) {
+    public boolean removeArbeiter(History history, String id) {
         boolean r = false;
         for (int i = 0; i < arbeiterListe.length; i++) {
             if (arbeiterListe[i] != null) {
@@ -78,6 +75,7 @@ public class Function {
                     arbeiterListe[i] = null;
                     history.personChanged(arbeiterListe[i], 2);
                     r = true;
+                    break;
                 }
             }
         }
@@ -90,12 +88,13 @@ public class Function {
             if (managerListe[i] == null) {
                 managerListe[i] = manager;
                 r = true;
+                break;
             }
         }
         return r;
     }
 
-    public boolean removeManager(String id) {
+    public boolean removeManager(History history, String id) {
         boolean r = false;
         for (int i = 0; i < managerListe.length; i++) {
             if (managerListe[i] != null) {
@@ -103,6 +102,7 @@ public class Function {
                     managerListe[i] = null;
                     history.personChanged(managerListe[i], 2);
                     r = true;
+                    break;
                 }
             }
         }
@@ -114,17 +114,14 @@ public class Function {
         for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
             if (geschaeftsfuehrerListe[i] == null) {
                 geschaeftsfuehrerListe[i] = geschaeftsfuehrer;
-                System.out.println("2 "+ geschaeftsfuehrer);
-                System.out.println( i + " addGeschaeftsfuehrer - confirm");
                 r = true;
                 break;
-
             }
         }
         return r;
     }
 
-    public boolean removeGeschaeftsfuehrer(String id) {
+    public boolean removeGeschaeftsfuehrer(History history, String id) {
         boolean r = false;
         for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
             if (geschaeftsfuehrerListe[i] != null) {
@@ -132,6 +129,7 @@ public class Function {
                     geschaeftsfuehrerListe[i] = null;
                     history.personChanged(geschaeftsfuehrerListe[i], 2);
                     r = true;
+                    break;
                 }
             }
         }
@@ -144,12 +142,13 @@ public class Function {
             if (zeitArbeiterListe[i] == null) {
                 zeitArbeiterListe[i] = zeitArbeiter;
                 r = true;
+                break;
             }
         }
         return r;
     }
 
-    public boolean removeZeitArbeiter(String id) {
+    public boolean removeZeitArbeiter(History history, String id) {
         boolean r = false;
         for (int i = 0; i < zeitArbeiterListe.length; i++) {
             if (zeitArbeiterListe[i] != null) {
@@ -157,6 +156,7 @@ public class Function {
                     zeitArbeiterListe[i] = null;
                     history.personChanged(zeitArbeiterListe[i], 2);
                     r = true;
+                    break;
                 }
             }
         }
