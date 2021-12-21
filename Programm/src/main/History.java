@@ -1,6 +1,7 @@
 package main;
 
 import main.personen.Person;
+import main.personen.ZeitArbeiter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

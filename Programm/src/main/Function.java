@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class Function {
 
-    private String firmanName;
+    private String firmenName;
     private Arbeiter[] arbeiterListe = new Arbeiter[17];
     private Manager[] managerListe = new Manager[2];
     private Geschaeftsfuehrer[] geschaeftsfuehrerListe = new Geschaeftsfuehrer[1];
@@ -25,7 +25,7 @@ public class Function {
 
         setPersonArrayList();
 
-        String idString = firmanName.substring(0, 3).toUpperCase(Locale.ROOT);
+        String idString = firmenName.substring(0, 3).toUpperCase(Locale.ROOT);
         idString = idString + String.valueOf(person.getGeschlecht()).toLowerCase(Locale.ROOT);
         idString = idString + String.valueOf(person.getGeb().getYear()).substring(2,4);
         idString = idString + String.valueOf(person.getVorname().charAt(0)).toUpperCase(Locale.ROOT);
@@ -151,12 +151,12 @@ public class Function {
     }
 
 
-    public String getFirmanName() {
-        return firmanName;
+    public String getFirmenName() {
+        return firmenName;
     }
 
-    public void setFirmanName(String firmanName) {
-        this.firmanName = firmanName;
+    public void setFirmenName(String firmenName) {
+        this.firmenName = firmenName;
     }
 
     public ArrayList<Person[]> getPersonArrayList() {

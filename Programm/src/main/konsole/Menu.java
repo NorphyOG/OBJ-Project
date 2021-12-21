@@ -54,7 +54,7 @@ public class Menu {
                     Function function = new Function();
                     String string = "Test Company";
                     string = sc.next();
-                    function.setFirmanName(string);
+                    function.setFirmenName(string);
                     overlay.setShow1(" " + string);
                 }
                 case 2 -> {
