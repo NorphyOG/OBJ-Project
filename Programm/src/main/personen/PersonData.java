@@ -12,48 +12,35 @@ public class PersonData {
     private Function function = new Function();
     private History history = new History();
 
-    public void setup(Person person, int personLevel, int changedLevel) {
-        ZeitArbeiter zeitArbeiterUntil = (ZeitArbeiter) person;
-        Arbeiter arbeiterUntil = (Arbeiter) person;
-        Manager managerUntil = (Manager) person;
-        Geschaeftsfuehrer geschaeftsfuehrerUntil = (Geschaeftsfuehrer) person;
+    public void setup(ZeitArbeiter zeitArbeiter, Arbeiter arbeiter, Manager manager, Geschaeftsfuehrer geschaeftsfuehrer, int changedLevel) {
 
-        switch (personLevel) {
-            case 0 -> {
-                assert false;
-                zeitArbeiterUntil.setLohnZeitArbeiter((ZeitArbeiter) person);
-                function.addZeitArbeiter((ZeitArbeiter) person);
-            }
-            case 1 -> {
-                assert false;
-                arbeiterUntil.setLohnArbeiter((Arbeiter) person);
-                function.addArbeiter((Arbeiter) person);
-
-            }
-            case 2 -> {
-                assert false;
-                managerUntil.setLohnManager((Manager) person);
-                function.addManager((Manager) person);
-
-            }
-            case 3 -> {
-                assert false;
-                geschaeftsfuehrerUntil.setLohnGeschäftsführer((Geschaeftsfuehrer) person);
-                function.addGeschaeftsfuehrer((Geschaeftsfuehrer) person);
-
-            }
+        if (zeitArbeiter != null) {
+            zeitArbeiter.setLohnZeitArbeiter(zeitArbeiter);
+            function.setID(zeitArbeiter);
+            history.personChanged(zeitArbeiter ,changedLevel);
+        } else if (arbeiter != null) {
+            arbeiter.setLohnArbeiter(arbeiter);
+            function.setID(arbeiter);
+            history.personChanged(arbeiter ,changedLevel);
+        } else if (manager != null) {
+            manager.setLohnManager(manager);
+            function.setID(manager);
+            history.personChanged(manager ,changedLevel);
+        } else if (geschaeftsfuehrer != null) {
+            geschaeftsfuehrer.setLohnGeschäftsführer(geschaeftsfuehrer);
+            function.setID(geschaeftsfuehrer);
+            history.personChanged(geschaeftsfuehrer ,changedLevel);
         }
-        function.setID(person);
-        history.personChanged(person, changedLevel);
+        
     }
 
     public boolean dataPresent() {
-        //Data TODO
         if (useDataPresent) {
 
+            System.out.println("dataPresent");
 
             Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer("Günter","Gehindert", 'M', "Scheideweg 3", LocalDate.of(1988, 12,12), LocalDate.of(2010, 12, 22),8000,1.02,40);
-            setup(geschaeftsfuehrer, 3, 1);
+            setup(null, null, null , geschaeftsfuehrer, 1);
 
 
 

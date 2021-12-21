@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class Function {
 
-    private String firmenName;
+    private String firmenName = "Test Company";
     private Arbeiter[] arbeiterListe = new Arbeiter[17];
     private Manager[] managerListe = new Manager[2];
     private Geschaeftsfuehrer[] geschaeftsfuehrerListe = new Geschaeftsfuehrer[1];
@@ -17,6 +17,7 @@ public class Function {
     private History history = new History();
 
     public void setPersonArrayList() {
+        System.out.println("setPersonenArray");
         personArrayList.add(arbeiterListe);
         personArrayList.add(managerListe);
         personArrayList.add(geschaeftsfuehrerListe);
@@ -58,9 +59,11 @@ public class Function {
 
     public boolean addArbeiter(Arbeiter arbeiter) {
         boolean r = false;
+        System.out.println("addArbeiter - test");
         for (int i = 0; i < arbeiterListe.length; i++) {
             if (arbeiterListe[i] == null) {
                 arbeiterListe[i] = arbeiter;
+                System.out.println("addArbeiter - confirm");
                 r = true;
             }
         }

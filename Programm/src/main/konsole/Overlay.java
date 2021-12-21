@@ -85,8 +85,10 @@ public class Overlay {
         for (Person[] p : function.getPersonArrayList()) {
             for (Person pv : p) {
                 if (pv != null) {
+                    System.out.println("o1d - Output");
                     option4 = pv.toString();
                     System.out.format(lineMain, option4);
+                    System.out.println("║ " + pv);
                 }
             }
         }
