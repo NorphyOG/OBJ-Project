@@ -1,6 +1,7 @@
 package main.konsole;
 
 import main.Function;
+import main.History;
 import main.personen.PersonData;
 
 import java.util.InputMismatchException;
@@ -382,10 +383,11 @@ public class Menu {
             }
             Function function = new Function();
             Creator creator = new Creator();
+            History history = new History();
             switch (input) {
                 case 1:
 
-                    //function.addZeitArbeiter();
+
                     break;
                 case 2:
 

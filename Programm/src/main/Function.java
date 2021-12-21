@@ -14,6 +14,8 @@ public class Function {
     private ZeitArbeiter[] zeitArbeiterListe = new ZeitArbeiter[99];
     private ArrayList<Person[]> personArrayList = new ArrayList<>();
 
+    private History history = new History();
+
     public void setPersonArrayList() {
         personArrayList.add(arbeiterListe);
         personArrayList.add(managerListe);
@@ -71,6 +73,7 @@ public class Function {
             if (arbeiterListe[i] != null) {
                 if (arbeiterListe[i].getId().equals(id)) {
                     arbeiterListe[i] = null;
+                    history.personChanged(arbeiterListe[i], 2);
                     r = true;
                 }
             }
@@ -95,6 +98,7 @@ public class Function {
             if (managerListe[i] != null) {
                 if (managerListe[i].getId().equals(id)) {
                     managerListe[i] = null;
+                    history.personChanged(managerListe[i], 2);
                     r = true;
                 }
             }
@@ -119,6 +123,7 @@ public class Function {
             if (geschaeftsfuehrerListe[i] != null) {
                 if (geschaeftsfuehrerListe[i].getId().equals(id)) {
                     geschaeftsfuehrerListe[i] = null;
+                    history.personChanged(geschaeftsfuehrerListe[i], 2);
                     r = true;
                 }
             }
@@ -143,6 +148,7 @@ public class Function {
             if (zeitArbeiterListe[i] != null) {
                 if (zeitArbeiterListe[i].getId().equals(id)) {
                     zeitArbeiterListe[i] = null;
+                    history.personChanged(zeitArbeiterListe[i], 2);
                     r = true;
                 }
             }

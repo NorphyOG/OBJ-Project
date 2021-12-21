@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Creator {
 
-    public Person createPerson(int switchLevel) {
+    public void createPerson(int switchLevel) {
         //0=ZeitArbeiter 1=Arbeiter 2=Manager 3=Geschaeftsfuehrer
         Scanner sc = new Scanner(System.in);
         Overlay overlay = new Overlay();
@@ -241,7 +241,6 @@ public class Creator {
         History history = new History();
         Function function = new Function();
         PersonData personData = new PersonData();
-        Person person = null;
 
         switch (switchLevel) {
             case 0:
@@ -266,12 +265,10 @@ public class Creator {
 
                 ZeitArbeiter zeitArbeiter = new ZeitArbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, arbeitsZeitM);
                 personData.setup(zeitArbeiter, 0, 1);
-                person = zeitArbeiter;
                 break;
             case 1:
                 Arbeiter arbeiter = new Arbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden);
                 personData.setup(arbeiter, 1, 1);
-                person = arbeiter;
                 break;
             case 2:
 
@@ -333,7 +330,6 @@ public class Creator {
 
                 Manager manager = new Manager(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, gewPersonenListe, provision);
                 personData.setup(manager, 2, 1);
-                person = manager;
                 break;
             case 3:
                 ff = false;
@@ -357,11 +353,8 @@ public class Creator {
 
                 Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, zuschlag, arbeitsStunden);
                 personData.setup(geschaeftsfuehrer, 3, 1);
-                person = geschaeftsfuehrer;
                 break;
         }
-
-        return person;
 
 
     }
