@@ -67,13 +67,36 @@ public class PersonData {
             setup(arbeiter4, 1,1);
             Arbeiter arbeiter5 = new Arbeiter("Merome","Meber", 'M',"Marshall 11",LocalDate.of(2007,02,01),LocalDate.of(2011, 12,01),3000,40);
             setup(arbeiter5, 1,1);
-            Arbeiter arbeiter6 = new Arbeiter();
+            Arbeiter arbeiter6 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
             setup(arbeiter6, 1,1);
+            Arbeiter arbeiter7 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter7, 1,1);
+            Arbeiter arbeiter8 = new Arbeiter("Aerome","Aeber", 'M',"Sarshall 51",LocalDate.of(2007,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter8, 1,1);
+            Arbeiter arbeiter9 = new Arbeiter("Derome","Deber", 'M',"Sarshall 21",LocalDate.of(2008,12,11),LocalDate.of(2031, 12,01),3000,40);
+            setup(arbeiter9, 1,1);
+            Arbeiter arbeiter10 = new Arbeiter("Zerome","Zeber", 'M',"Barshall 221",LocalDate.of(2006,05,21),LocalDate.of(2018, 12,01),3000,40);
+            setup(arbeiter10, 1,1);
+            Arbeiter arbeiter11 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter11, 1,1);
+            Arbeiter arbeiter12 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter12, 1,1);
+            Arbeiter arbeiter13 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter13, 1,1);
+            Arbeiter arbeiter14 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter14, 1,1);
+            Arbeiter arbeiter15 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter15, 1,1);
+            Arbeiter arbeiter16 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter16, 1,1);
+            Arbeiter arbeiter17 = new Arbeiter("Nerome","Neber", 'M',"Marshall 21",LocalDate.of(2006,12,11),LocalDate.of(2021, 12,01),3000,40);
+            setup(arbeiter17, 1,1);
 
             Person[] pArray1 = {arbeiter1, arbeiter2};
             Person[] pArray2 = {arbeiter1, arbeiter2};
 
-            ZeitArbeiter zeitArbeiter1 = new ZeitArbeiter();
+            ZeitArbeiter zeitArbeiter1 = new ZeitArbeiter("Marie","Becher",'W',"Drachsllerweg 5", LocalDate.of(2000,12,02),LocalDate.of(2020, 12,12), 1500, 38,120);
+            setup(zeitArbeiter1, 0,1);
 
             Manager manager1 = new Manager("Burak","Amidala",'W',"Brandauerstraße 5",LocalDate.of(1977, 02,20), LocalDate.of(2010, 12, 23), 5000, 40, pArray1, 1.04);
             setup(manager1, 2, 1);
