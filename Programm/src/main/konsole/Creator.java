@@ -18,6 +18,7 @@ public class Creator {
         String vorname, nachname;
         char geschlecht;
         String adresse;
+        int jahr = 0, monat = 0, tag = 0;
         LocalDate geb;
         LocalDate eintritt;
         double lohnM;
@@ -73,6 +74,170 @@ public class Creator {
                 }
             }
         }
+
+        overlay.setOption1("Adresse eigeben");
+        overlay.o1ss(false);
+        adresse = sc.next();
+
+        boolean ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Geburtstag Jahr eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                jahr = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Geburtstag Monat eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                monat = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Geburtstag Tag eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                tag = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        geb = LocalDate.of(jahr, monat, tag);
+
+        eintritt = LocalDate.now();
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Monats Gehalt eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                lohnM = sc.nextDouble();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Arbeitsstunden eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                arbeitsStunden = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Eintritts Jahr eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                jahr = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Eintritts Monat eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                monat = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        ff = false;
+        run = true;
+        while (run) {
+            if (!ff) {
+                overlay.setOption1("Eintritts Tag eigeben");
+                overlay.o1ss(false);
+            }
+            try {
+                tag = sc.nextInt();
+                run = false;
+                ff = false;
+            } catch (InputMismatchException e) {
+                overlay.setErr("Error (Keine gültige Eingabe)");
+                overlay.o1ss(true);
+                ff = true;
+                sc.next();
+            }
+        }
+
+        eintritt = LocalDate.of(jahr, monat, tag);
+
+        
 
         switch (switchLevel) {
             case 0:

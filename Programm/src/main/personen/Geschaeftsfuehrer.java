@@ -18,9 +18,9 @@ public class Geschaeftsfuehrer extends Person{
 
         double gehalt = gehaltM * 12;
         if (arbeitsStunden <= 160) {
-            gehalt = gehalt + ((gehaltM / 730) * überstunden(arbeitsStunden));
+            gehalt = gehalt + ((gehaltM / 730) * ueberstunden(arbeitsStunden));
         } else {
-            gehalt = gehalt - ((gehaltM / 730) * überstunden(arbeitsStunden));
+            gehalt = gehalt - ((gehaltM / 730) * ueberstunden(arbeitsStunden));
         }
         gehalt = gehalt + zuschlag;
 

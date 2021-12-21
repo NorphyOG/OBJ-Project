@@ -362,9 +362,15 @@ public class Menu {
         overlay.setOption2(" 2 = Remove Zeit Arbeiter");
         overlay.setOption3(" 3 = Back");
         overlay.o1(false);
+
+        boolean a1 = false;
         while (run) {
             if (switchE) {
-                overlay.o1(false);
+                if (a1) {
+                    overlay.o1(true);
+                } else {
+                    overlay.o1(false);
+                }
             }
             try {
                 input = sc.nextInt();
@@ -383,7 +389,15 @@ public class Menu {
                     break;
                 case 2:
 
-                    //function.removeZeitArbeiter();
+                    overlay.setErr("ID eingeben um Person zu löschen");
+                    overlay.o1(true);
+                    String idString = sc.next();
+                    boolean a = function.removeZeitArbeiter(idString);
+                    if (a) {
+                        overlay.setErr("Erfolgreich Removed");
+                    } else {
+                        overlay.setErr("Konnte nicht Removed werden");
+                    }
                     break;
                 case 3:
                     run = false;

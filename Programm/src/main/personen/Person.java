@@ -29,7 +29,7 @@ public class Person {
         person.setLohn(getLohn() + wert);
     }
 
-    public int überstunden(int arbeitsStunden) {
+    public int ueberstunden(int arbeitsStunden) {
         return arbeitsStunden - 160;
     }
 

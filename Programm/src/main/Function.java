@@ -68,9 +68,11 @@ public class Function {
     public boolean removeArbeiter(String id) {
         boolean r = false;
         for (int i = 0; i < arbeiterListe.length; i++) {
-            if (arbeiterListe[i].getId().equals(id)) {
-                arbeiterListe[i] = null;
-                r = true;
+            if (arbeiterListe[i] != null) {
+                if (arbeiterListe[i].getId().equals(id)) {
+                    arbeiterListe[i] = null;
+                    r = true;
+                }
             }
         }
         return r;
@@ -90,9 +92,11 @@ public class Function {
     public boolean removeManager(String id) {
         boolean r = false;
         for (int i = 0; i < managerListe.length; i++) {
-            if (managerListe[i].getId().equals(id)) {
-                managerListe[i] = null;
-                r = true;
+            if (managerListe[i] != null) {
+                if (managerListe[i].getId().equals(id)) {
+                    managerListe[i] = null;
+                    r = true;
+                }
             }
         }
         return r;
@@ -112,9 +116,11 @@ public class Function {
     public boolean removeGeschaeftsfuehrer(String id) {
         boolean r = false;
         for (int i = 0; i < geschaeftsfuehrerListe.length; i++) {
-            if (geschaeftsfuehrerListe[i].getId().equals(id)) {
-                geschaeftsfuehrerListe[i] = null;
-                r = true;
+            if (geschaeftsfuehrerListe[i] != null) {
+                if (geschaeftsfuehrerListe[i].getId().equals(id)) {
+                    geschaeftsfuehrerListe[i] = null;
+                    r = true;
+                }
             }
         }
         return r;
@@ -134,9 +140,11 @@ public class Function {
     public boolean removeZeitArbeiter(String id) {
         boolean r = false;
         for (int i = 0; i < zeitArbeiterListe.length; i++) {
-            if (zeitArbeiterListe[i].getId().equals(id)) {
-                zeitArbeiterListe[i] = null;
-                r = true;
+            if (zeitArbeiterListe[i] != null) {
+                if (zeitArbeiterListe[i].getId().equals(id)) {
+                    zeitArbeiterListe[i] = null;
+                    r = true;
+                }
             }
         }
         return r;
