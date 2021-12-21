@@ -31,7 +31,7 @@ public class PersonData {
             function.setID(geschaeftsfuehrer);
             history.personChanged(geschaeftsfuehrer ,changedLevel);
         }
-        
+
     }
 
     public boolean dataPresent() {
