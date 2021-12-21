@@ -266,11 +266,11 @@ public class Creator {
                 }
 
                 ZeitArbeiter zeitArbeiter = new ZeitArbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, arbeitsZeitM);
-                personData.setup(zeitArbeiter, 0, 1);
+                personData.setup(zeitArbeiter, null, null, null, 1);
                 break;
             case 1:
                 Arbeiter arbeiter = new Arbeiter(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden);
-                personData.setup(arbeiter, 1, 1);
+                personData.setup(null, arbeiter, null, null, 1);
                 break;
             case 2:
 
@@ -331,7 +331,7 @@ public class Creator {
                 }
 
                 Manager manager = new Manager(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, arbeitsStunden, gewPersonenListe, provision);
-                personData.setup(manager, 2, 1);
+                personData.setup(null, null, manager, null, 1);
                 break;
             case 3:
                 ff = false;
@@ -354,7 +354,7 @@ public class Creator {
                 }
 
                 Geschaeftsfuehrer geschaeftsfuehrer = new Geschaeftsfuehrer(vorname, nachname, geschlecht, adresse, geb, eintritt, lohnM, zuschlag, arbeitsStunden);
-                personData.setup(geschaeftsfuehrer, 3, 1);
+                personData.setup(null, null, null, geschaeftsfuehrer, 1);
                 break;
         }
 
